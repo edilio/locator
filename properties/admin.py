@@ -24,7 +24,7 @@ class ManagementAgentAdmin(admin.ModelAdmin):
     list_display = ('company_type', '__unicode__',  # 'individual_full_name','organization_name',
                     'address_line1', 'address_line2', 'city', 'main_phone_number', #  'main_fax_number',
                     'email', 'properties', 'total_units')
-    list_per_page = 13
+    list_per_page = 25
     list_filter = ('company_type','city__state')
     search_fields = ('individual_full_name', 'organization_name')
 
@@ -32,7 +32,7 @@ class ManagementAgentAdmin(admin.ModelAdmin):
 class OwnerAdmin(admin.ModelAdmin):
     list_display = ('company_type', 'individual_title_text', 'individual_full_name', 'organization_name',
                     'address_line1', 'address_line2', 'city', 'main_phone_number', 'main_fax_number', 'email')
-    list_per_page = 13
+    list_per_page = 25
     list_filter = ('company_type','city__state')
     search_fields = ('individual_full_name','organization_name')
 
@@ -40,7 +40,7 @@ class OwnerAdmin(admin.ModelAdmin):
 class PropertiesAdmin(admin.ModelAdmin):
     list_display = ('servicing_site_name', 'name', 'owner', 'management_agent', 'phone_number', 'city',
                     'property_total_unit_count', 'property_category_name')
-    list_per_page = 13
+    list_per_page = 25
     list_filter = ('city__state',)
     search_fields = ('name','owner__individual_full_name', 'owner__organization_name',
                      'management_agent__individual_full_name', 'management_agent__organization_name', 'phone_number')
